@@ -1,5 +1,5 @@
 class Agent:
-    def __init__(self, id_number, game, number_of_agents, reflexion_level=3, intel_level=3):
+    def __init__(self, id_number, game, number_of_agents, reflexion_level=3, intel_level=3, initial_value=-1):
         self.id_number = id_number
         self.game = game
         self.number_of_agents = number_of_agents
@@ -7,7 +7,7 @@ class Agent:
         self.intel_level = intel_level
         self.last_result = None
         self.awareness_structure = []
-        self.fill_awareness_structure(-1)
+        self.fill_awareness_structure(initial_value)
 
     def fill_awareness_structure(self, value):
         awareness_structure = [[] for x in range(self.number_of_agents)]
