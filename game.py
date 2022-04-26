@@ -10,12 +10,14 @@ class Game:
     round (after intelligence/counterintelligence actions and calculating) 2. guesses of each agent (player), 3. overall
     score (mean of guesses multiplied by p-value) 4. winner or winners (for multiple same optimal guess case)
     """
-    def __init__(self, agents_data_array: List[List[int]], p: float, min_val: int, max_val: int):
+    def __init__(self, agents_data_array: List[List[int]], p: float, min_val: int, max_val: int, disinformation_factor:
+                 float = 1.25):
         """
         :param agents_data_array: List[List[int]]
         :param p: float
         :param min_val: int
         :param max_val: int
+        :param disinformation_factor: float
         """
         self.number_of_agents = len(agents_data_array)
         self.agents = [Agent(i, self, self.number_of_agents, agents_data_array[i][0], agents_data_array[i][1],
@@ -27,6 +29,7 @@ class Game:
         self.p = p
         self.min_val = min_val
         self.max_val = max_val
+        self.disinformation_factor = disinformation_factor
 
         self.intel_actions = []
         self.results = []

@@ -56,7 +56,8 @@ class GetInfo(IntelAction):
             else:
                 # Failed intelligence action - successful counterintelligence action
                 counter_disinformation = intercepted_info
-                counter_disinformation = [int(x * 1.25) for x in counter_disinformation]
+                counter_disinformation = [int(x * self.target.game.disinformation_factor) for x in
+                                          counter_disinformation]
                 self.attacker.modify_awareness_structure(self.reflexion_level, ids_for_modify, counter_disinformation)
         else:
             pass
@@ -78,7 +79,7 @@ class Disinform(IntelAction):
         ids_for_getinfo = self.ids_disinform_agent
 
         value = self.target.get_awareness_info(self.reflexion_level, ids_for_getinfo)
-        value = [int(val * 1.25) for val in value]
+        value = [int(val * self.target.game.disinformation_factor) for val in value]
 
         if value is not None and self.attacker.intel_level > self.target.intel_level:
             self.target.modify_awareness_structure(self.reflexion_level, ids=ids_for_getinfo, values=value)
@@ -89,4 +90,3 @@ class Disinform(IntelAction):
         elif value is not None:
             self.attacker.modify_after_disinform(self.reflexion_level - 1, value, self.target.id_number,
                                                  ids_for_getinfo)
-
