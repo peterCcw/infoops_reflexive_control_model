@@ -72,6 +72,12 @@ class Disinform(IntelAction):
     target's awareness structure is not changed.
     """
     def __init__(self, ids_disinform_agent: List[int] = None, *args, **kwargs):
+        """
+        :param attacker: Agent
+        :param target: Agent
+        :param reflexion_level: int
+        :param ids_disinform_agent: List[int]
+        """
         self.ids_disinform_agent = ids_disinform_agent
         super().__init__(*args, **kwargs)
 

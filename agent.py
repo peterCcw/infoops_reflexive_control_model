@@ -7,7 +7,7 @@ class Agent:
     """
 
     def __init__(self, id_number: int, game, number_of_agents: int,
-                 reflexion_level: int = 3, intel_level: int = 3, initial_value: int = -1):
+                 reflexion_level: int = 3, intel_level: int = 3, initial_value: int = 100):
         """
         :param id_number: int
         :param game: Game
@@ -149,7 +149,7 @@ class Agent:
         differences = [abs(((p * sum(values)) / (N - p)) - x) for x in range(min_val, max_val + 1)]
         return differences.index(min(differences))
 
-    def calculate_guess_value(self):
+    def calculate_guess_value(self) -> int:
         """
         Calculate final guess starting with the highest reflexion levels and going up to top.
         :return: int
@@ -184,7 +184,7 @@ class Agent:
 
         return calculated_value
 
-    def next_round(self, result_value):
+    def next_round(self, result_value: int) -> None:
         """
         Prepares agent for next round. Refills awareness structure basing on given result and previous results. After
         first round fills awareness structure with mean guess (assumes that every agent gave same guess), then

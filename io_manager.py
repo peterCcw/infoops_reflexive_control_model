@@ -4,23 +4,23 @@ from game import Game
 from intel_actions import GetInfo, Disinform
 
 
-class FileReader:
+class InputOutputManager:
     """
     Provides file I/O interface.
     """
-    def __init__(self, path):
+    def __init__(self, filename):
         """
-        :param path: str
+        :param filename: str
         """
-        self.path = path
+        self.filename = filename
         self.agents_array = []
         self.game = None
 
     def read_file_and_execute(self) -> None:
         """
-        Reads file and executes game scenario. Results are saved into file 'input_file_name'_output.
+        Reads file and executes game scenario.
         """
-        with open(self.path) as f:
+        with open(self.filename) as f:
             lines = f.readlines()
             for i in range(len(lines)):
                 line = lines[i]
@@ -79,9 +79,22 @@ class FileReader:
 
                     # Saving results to file
                     elif action_data_line[0] == 'results':
-                        output_filename = f"output_{self.path.split('/')[-1]}"
+                        output_filename = f"output_{self.filename.split('/')[-1]}"
                         with open(output_filename, 'w') as f_output:
                             original_stdout = sys.stdout
                             sys.stdout = f_output
                             self.game.print_results()
                             sys.stdout = original_stdout
+            self.save_results()
+
+    def save_results(self) -> None:
+        """
+        Saves results into file 'input_file_name'_output.
+        """
+        output_filename = f"output_{self.filename.split('/')[-1]}"
+        with open(output_filename, 'w') as f_output:
+            original_stdout = sys.stdout
+            sys.stdout = f_output
+            self.game.print_results()
+            sys.stdout = original_stdout
+        print(f"Results saved to {output_filename}.")

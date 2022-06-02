@@ -1,0 +1,136 @@
+=============== # Round 1 =============== 
+ Initial awareness structure:
+    [50, 50, 50]
+    [[50, 50, 50], [50, 50, 50], [50, 50, 50]]
+    [[50, 50, 50], [50, 50, 50], [50, 50, 50]]
+
+    [[50, 50, 50], [], []]
+    [50, 50, 50]
+    [[], [], [50, 50, 50]]
+
+    []
+    []
+    [50, 50, 50]
+
+ Awareness structures after intelligence/counterintelligence actions and calculation:
+    [10, 17, 17]
+    [[29, 50, 50], [29, 17, 29], [50, 50, 29]]
+    [[29, 50, 50], [50, 29, 50], [29, 29, 17]]
+
+    [[29, 50, 50], [], []]
+    [29, 17, 29]
+    [[], [], [50, 50, 29]]
+
+    []
+    []
+    [50, 50, 29]
+
+ Outputs of each agent:
+ [10, 17, 29]
+ Overall round result:
+ 12.4507
+ Winner(s):
+ [0]
+
+=============== # Round 2 =============== 
+ Initial awareness structure:
+    [18, 18, 18]
+    [[18, 18, 18], [18, 18, 18], [18, 18, 18]]
+    [[18, 18, 18], [18, 18, 18], [18, 18, 18]]
+
+    [[18, 18, 18], [], []]
+    [18, 18, 18]
+    [[], [], [18, 18, 18]]
+
+    []
+    []
+    [18, 18, 18]
+
+ Awareness structures after intelligence/counterintelligence actions and calculation:
+    [3, 6, 6]
+    [[10, 18, 18], [10, 6, 10], [18, 18, 10]]
+    [[10, 18, 18], [18, 10, 18], [10, 10, 6]]
+
+    [[10, 18, 18], [], []]
+    [10, 6, 10]
+    [[], [], [18, 18, 10]]
+
+    []
+    []
+    [18, 18, 10]
+
+ Outputs of each agent:
+ [3, 6, 10]
+ Overall round result:
+ 4.2243
+ Winner(s):
+ [0]
+
+=============== # Round 3 =============== 
+ Initial awareness structure:
+    [1, 1, 1]
+    [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+    [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+
+    [[1, 1, 1], [], []]
+    [1, 1, 1]
+    [[], [], [1, 1, 1]]
+
+    []
+    []
+    [1, 1, 1]
+
+ Awareness structures after intelligence/counterintelligence actions and calculation:
+    [1, 1, 1]
+    [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+    [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+
+    [[1, 1, 1], [], []]
+    [1, 1, 1]
+    [[], [], [1, 1, 1]]
+
+    []
+    []
+    [1, 1, 1]
+
+ Outputs of each agent:
+ [1, 1, 1]
+ Overall round result:
+ 0.6670
+ Winner(s):
+ [0, 1, 2]
+
+=============== # Round 4 =============== 
+ Initial awareness structure:
+    [0, 0, 0]
+    [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+    [[0, 0, 0], [], []]
+    [0, 0, 0]
+    [[], [], [0, 0, 0]]
+
+    []
+    []
+    [0, 0, 0]
+
+ Awareness structures after intelligence/counterintelligence actions and calculation:
+    [0, 0, 0]
+    [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+    [[0, 0, 0], [], []]
+    [0, 0, 0]
+    [[], [], [0, 0, 0]]
+
+    []
+    []
+    [0, 0, 0]
+
+ Outputs of each agent:
+ [0, 0, 0]
+ Overall round result:
+ 0.0000
+ Winner(s):
+ [0, 1, 2]
+

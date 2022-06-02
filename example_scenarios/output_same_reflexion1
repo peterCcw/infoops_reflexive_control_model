@@ -1,0 +1,34 @@
+=============== # Round 1 =============== 
+ Initial awareness structure:
+    [50, 50, 50]
+    []
+    []
+
+    []
+    [50, 50, 50]
+    []
+
+    []
+    []
+    [50, 50, 50]
+
+ Awareness structures after intelligence/counterintelligence actions and calculation:
+    [29, 50, 50]
+    []
+    []
+
+    []
+    [50, 29, 50]
+    []
+
+    []
+    []
+    [50, 50, 29]
+
+ Outputs of each agent:
+ [29, 29, 29]
+ Overall round result:
+ 19.3430
+ Winner(s):
+ [0, 1, 2]
+

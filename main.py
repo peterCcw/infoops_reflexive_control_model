@@ -1,9 +1,15 @@
-from file_reader import FileReader
+import os
+import sys
+
+from io_manager import InputOutputManager
 
 # Scenario files must be in the same directory as main.py
 
-reader = FileReader("example_scenarios/scenario1")
-reader.read_file_and_execute()
+if len(sys.argv) > 1 and os.path.exists(os.getcwd() + '\\' + sys.argv[1]):
+    reader = InputOutputManager(sys.argv[1])
+    reader.read_file_and_execute()
+else:
+    print("No filename given or file does not exist.")
 #
 # from game import Game
 # from intel_actions import GetInfo, Disinform

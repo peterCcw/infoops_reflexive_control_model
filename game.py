@@ -49,7 +49,6 @@ class Game:
             actions = filter(lambda x: (x.attacker.id_number == agent.id_number), self.intel_actions)
             for action in actions:
                 action.run_action()
-                self.intel_actions.remove(action)
             guesses_of_players.append((agent.id_number, agent.calculate_guess_value()))
 
         # Sorting guesses by id of agents
@@ -60,8 +59,11 @@ class Game:
         end_of_round_awareness_structures = [agent.awareness_structure for agent in self.agents]
         end_of_round_awareness_structures = copy.deepcopy(end_of_round_awareness_structures)
 
+        # Cleaning intel_action list
+        self.intel_actions = []
+
         # Calculating overall score
-        score_overall = sum(guesses_of_players) / len(guesses_of_players)
+        score_overall = (sum(guesses_of_players) / len(guesses_of_players)) * self.p
 
         # Calculating winners
         results_of_players = []
